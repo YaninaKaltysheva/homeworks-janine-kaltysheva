@@ -8,7 +8,7 @@ alert( string.slice(-1).toUpperCase ());
 /*Найти положение слова ‘string’ в строке*/
 alert( string.indexOf("string") );
 /*Найти положение второго пробела*/
-alert( string.lastIndexOf(" "));
+alert( string.indexOf(string.indexOf(" ")+1) );
 /*Получить строку с 5-го символа длиной 4 буквы*/
 alert ( string.substr(5,4));
 /*Получить строку с 5-го по 9-й символы*/
@@ -17,9 +17,9 @@ alert ( string.substring(5, 9));
 alert ( string.slice(0, -6));
 /*Из двух переменных a=20 и b=16 получить переменную string, в которой будет
 содержаться текст “2016”*/
-const a = "20";
-const b = "16";
-alert (a + b);
+const a = 20;
+const b = 16;
+alert(`${a}${b}`)
 /*Получить число pi из Math и округлить его до 2-х знаков после точки*/
 alert (Math.PI.toFixed(2));
 /*Используя Math, найти максимальное и минимальное числа из представленного ряда 15, 11, 16, 12,
@@ -41,9 +41,9 @@ function randomInteger(min,max) {
 }
 alert( randomInteger(0,50));
 /*Проверить результат вычисления 0.6 + 0.7 - как привести к нормальному виду (1.3)*/
-var m=0.6+0.7
+var m=0.6+0.7;
 alert(isFinite(m));
-alert(+m);
+alert(m.toFixed(1));
 /*Получить число из строки ‘100$’*/
 alert( parseInt('100$'));
 
