@@ -84,4 +84,4 @@ object.details = {
     model:'7',
     color:'white'
 }
-console.log(object);
+    console.log(object);
