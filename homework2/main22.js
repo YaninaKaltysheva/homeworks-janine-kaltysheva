@@ -1,7 +1,7 @@
 //if else
 //Если переменная равна “hidden”, присвоить ей значение “visible”, иначе - “hidden”.
 let h = 'hidden';
-if(h = 'hidden'){
+if(h === 'hidden'){
     h= 'visible';
     alert(h);
 }else {
@@ -17,10 +17,11 @@ if(h = 'hidden'){
 
 let g = 12;
 if(g == 0){
-    alert(g = 1);
+    g = 1;
     alert(g);
 }else if(g<0){
-    alert(g='less then zero');
+    g='less then zero';
+    alert(g)
 }else if(g>0){
     alert(g *= 10);
 };
@@ -63,9 +64,10 @@ if(item.discount){
 let product = { name: 'Яблоко', price: '10$' };
 let min = 10;
 let max = 20;
-if( parseInt(product.price)>= min ){
+let newPrice = parseInt(product.price)
+if( newPrice>= min ){
     console.log(product.name);
-}else if(parseInt(product.price)>=max ){
+}else if(newPrice>=max ){
     console.log(product.name);
 } else {
     console.log('товаров не найдено');
@@ -79,9 +81,7 @@ let object = {product:'iphone’'};
 object.price = 1000;
 object.currency = 'dollar';
 object.details = {
-    obj:{
-        model:'7',
-        color:'white'
-    }
+    model:'7',
+    color:'white'
 }
 console.log(object);
