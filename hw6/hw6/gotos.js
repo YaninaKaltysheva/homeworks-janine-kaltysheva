@@ -33,84 +33,49 @@
 //     }
 // }
 
-
-
-
 let storage = {
-    todos: []
-};
-
+    todos: []};
 function generateId() {
     const words = '0123456789qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM';
     let id = '';
-
     for (let char of words) {
         let index = Math.floor(Math.random() * words.length);
-        id += words[index];
-    }
-
-    return id;
-}
-
+        id += words[index]}
+    return id;}
 function addNewTodoToStorage(title, text) {
     if (!title) return console.log('Введите заголовок задачи');
     if (!text) return console.log('Введите текст задачи');
-
     const newTask = {
         title,
         text,
-        id: generateId()
-    };
-
+        id: generateId()};
     storage.todos.push(newTask);
-
-    return storage.todos;
-}
-
+    return storage.todos}
 addNewTodoToStorage('My title 1', 'My text 1');
 addNewTodoToStorage('My title 2', 'My text 2');
 addNewTodoToStorage('My title 3', 'My text 3');
 addNewTodoToStorage('My title 4', 'My text 4');
-
 function deleteTodoFromStorage(id) {
     if (!id) return console.log('Передайте id задачи');
-
     const taskIndex = storage.todos.findIndex((task) => task.id === id)
-
     if (taskIndex === -1) return console.log('id несуществуе');
-
     const removedTask = storage.todos.splice(taskIndex, 1);
-
-    return removedTask;
-}
-
+    return removedTask}
 function editTaskStorage(id, title, text) {
     if (!id) return console.log('Передайте id задачи');
     if (!title) return console.log('Введите заголовок задачи');
     if (!text) return console.log('Введите текст задачи');
-    
     for(i=0; i < storage.todos.length; i++){
   if (storage.todos[i]['id'] === id){
     storage.todos[i] = {
            id: id,
            title: title,
-           text: text
-       }
-       return storage.todos  
-    } 
+           text: text}
+    return storage.todos}} 
     
-    } 
-    
-    return storage.todos
-    };
-    
+    return storage.todos};
     editTaskStorage('hI1t22wjyMyTNLFbQLlA8qCYxu2VQy8V7YQyZIe3KOmCSrJc3snt5peI6c5hZF', 'newtitle', 'newtext')
-    
-
     // ТОЛЬКО ID БЕРЕМ ПОСТОЯННО НОВОЕ 
-
-
-
 // эти строки лучше выполнять в консоли браузера, когда вы сможете 
 // из массива storage.todos взять уникальный id тасочки 
 // editTaskStorage('some id', 'new title', 'new text')
