@@ -20,12 +20,13 @@ console.log(linkNotFromUl)
 const newElement = () => {
     console.log(document.querySelector('ul').previousElementSibling);
     console.log(document.querySelector('ul').nextElementSibling);
-    return newElement;
+    return document.querySelector('ul').previousElementSibling;
+    return document.querySelector('ul').nextElementSibling;
 }
 newElement()
 //4. Посчитать количество элементов li в списке
 const countElement = () => {
     console.log(document.querySelectorAll('ul li').length);
-    return countElement;
+    return document.querySelectorAll('ul li').length;
 }
 countElement()
