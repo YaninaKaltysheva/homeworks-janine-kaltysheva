@@ -72,7 +72,6 @@ function editTaskStorage(id, title, text) {
            title: title,
            text: text}
     return storage.todos}} 
-    
     return storage.todos};
     editTaskStorage('hI1t22wjyMyTNLFbQLlA8qCYxu2VQy8V7YQyZIe3KOmCSrJc3snt5peI6c5hZF', 'newtitle', 'newtext')
     // ТОЛЬКО ID БЕРЕМ ПОСТОЯННО НОВОЕ 
@@ -80,5 +79,4 @@ function editTaskStorage(id, title, text) {
 // из массива storage.todos взять уникальный id тасочки 
 // editTaskStorage('some id', 'new title', 'new text')
 // console.log(storage.todos)
-
 // или можете практиковаться на storage.todos[0].id :)
