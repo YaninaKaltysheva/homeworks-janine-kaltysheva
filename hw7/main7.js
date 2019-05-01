@@ -89,7 +89,7 @@ const fragment = document.createDocumentFragment(),
     newsul = document.querySelector('ul'),
     numbChildrenUl = newsul.children.length;
 
-for (let index = 1; index <= 2; index++) {
+for (let index = 1; index < numbChildrenUl; index++) {
     const newLi = document.createElement('li')
     newLi.classList.add('new-item')
     fragment.appendChild(newLi)
