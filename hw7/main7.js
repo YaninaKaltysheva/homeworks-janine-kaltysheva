@@ -124,11 +124,23 @@ mark.insertAdjacentText('beforeend', 'green');
 mark.classList.add('green');
 
 //5. Отсортировать li внутри списка в обратном порядке (по тексту внутри)
-let allLiArray = Array.from(document.querySelectorAll('li'));
-
-let reverseSortedLi = allLiArray.sort((prev, next) => -1);
-
-for (let index = 0; index < reverseSortedLi.length; index++) {
-    newsul.appendChild(reverseSortedLi[index])
+const delLi = document.querySelectorAll('li');
+for(let i = 0; i < delLi.length; i++) {
+    delLi[i].remove();
 }
+const fragmentNew = document.createDocumentFragment(),
+    newul = document.querySelector('ul');
+    newNumbChildrenUl = newul.children.length;
+for (let index = 1; index <= 4 ; index++) {
+    const newSecondLi = document.createElement('li')
+    fragmentNew.appendChild(newSecondLi)
+    newSecondLi.textContent = `link ${newNumbChildrenUl + index}`
+}
+newul.appendChild(fragmentNew)
+console.log(newul)
 
+const allLiArray = Array.from(document.querySelectorAll('li'));
+const reverseSortedLi = allLiArray.sort((prev, next) => -1);
+for (let index = 0; index < reverseSortedLi.length; index++) {
+    newul.appendChild(reverseSortedLi[index])
+}
