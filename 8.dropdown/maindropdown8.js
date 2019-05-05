@@ -1,18 +1,22 @@
-const dropDownMenu = document.querySelector('.menu');
-dropDownMenu.addEventListener('click', ({target}) => {
-        const divWithNone = document.querySelector('.d-none')
-        if (divWithNone) {
-                divWithNone.classList.remove('d-none')
-        }
-        const divDropDown = target.classList.contains('dropdown-menu') ? target : target.closest('.dropdown-menu')
-        if (divDropDown) {
-       const divDropDown = document.querySelector('.dropdown-menu')
-        divDropDown.classList.add('d-none')
-        }
-        console.log(target)
-//       // console.log(divDropDown)
-});
+let menuElem = document.querySelector('.menu');
 
+menuElem.addEventListener('click', ({target}) =>{
+  
+    const searchClass = menuElem.querySelector('.close')
+    if (searchClass){
+        searchClass.classList.remove('close')
+        searchClass.classList.add('d-none')
+    }
+    const li = target.tagName === 'LI' ? target : target.closest('li')
+    const divLi = li.querySelector('.dropdown-menu')
+    if(divLi){
+        divLi.classList.add('close')
+        divLi.classList.remove('d-none')
+    }else{
+       alert('Здесь нет меню')
+    }
+    
+})
 
 
 // document.getElementById('nav').onmouseover= function(event) {
