@@ -184,10 +184,9 @@ function PlayString(string) {
     }
     this.getNewString  = function (){
         var newString = "";
-    for (var i = string.length-1; i>=0; i--){
-       newString+= string[i];
-   }
-   return newString;
+        for (var i = string.length-1; i>=0; i--){
+            newString+= string[i];}
+    return newString;
     }}
 
 const showString = new PlayString('hello word!')
