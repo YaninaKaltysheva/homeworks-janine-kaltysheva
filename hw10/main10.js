@@ -60,15 +60,14 @@ const calc = (function(n){
         return n;
     }
     function strLength(){
-    return n.length;
+        return n.length;
     }
     function newValue (str){
-        var newString = "";
-        n=str;
-   for (var i = n.length-1; i>=0; i--){
-       newString+= n[i];
-   }
-   return newString;
+       var newString = "";
+       n=str;
+       for (var i = n.length-1; i>=0; i--){
+       newString+= n[i];}
+       return newString;
     }
     return {
         setValue,
@@ -126,7 +125,7 @@ let element;
         return this;
     }
     function showValue(){
-       element = Math.round(element);
+        element = Math.round(element);
         return element;
     }
     return{
@@ -186,7 +185,7 @@ function PlayString(string) {
         var newString = "";
         for (var i = string.length-1; i>=0; i--){
             newString+= string[i];}
-    return newString;
+        return newString;
     }}
 
 const showString = new PlayString('hello word!')
