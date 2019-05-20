@@ -36,7 +36,7 @@ const comp = new Component('span');
 class counter {
     constructor(element){
         this.element = element;}
-        get elem(){return this.element};
+        get elem() => this.element;
         set elem(value){this.element = value};
         plus(val){
             if (typeof val !== 'number') return 'Передайте число';
@@ -57,7 +57,6 @@ class counter {
             if (typeof val !== 'number') return 'Передайте число';
             this.element /= val;
             return this
-        };  
-}
-const calc = new counter(3).plus(5).minus(2).elem=0;
-console.log(calc)
+        }}
+const calc = new counter(3).plus(5).minus(2);
+console.log(calc.elem)
