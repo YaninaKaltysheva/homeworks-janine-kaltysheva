@@ -37,7 +37,7 @@ function onSelectChange() {
     }, country, category)
 }
 function onSearchInputChange() {
-     const search = searchInput.value;
+    const search = searchInput.value;
     if(search.length < 3) return console.log ('вводите еще')
     loaderUI.setLoader()
     notificationUI.removeNotification()
