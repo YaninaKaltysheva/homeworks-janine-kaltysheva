@@ -7,16 +7,12 @@ class NotificationUI {
     constructor(selector) {
         this.container = document.querySelector(selector)
     }
-
     setNotification() {
         this.container.innerHTML = NotificationUI.getTemplate()
     }
-
     removeNotification() {
         this.container.innerHTML = ''
     }
-
-
     static getTemplate() {
         return `
         <div class="row">
