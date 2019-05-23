@@ -25,12 +25,9 @@ searchInput.addEventListener('keyup', onSearchInputChange)
 function onSelectChange() {
     const country = countrySelect.value;
     const category = categorySelect.value;
-
     if (!country || !category) return console.log('Choose the category and country')
-
     loaderUI.setLoader()
-    return
-    newsService.getNewsByCountryAndCatigory(({
+    return newsService.getNewsByCountryAndCatigory(({
         articles
     }) => {
         loaderUI.removeLoader()
