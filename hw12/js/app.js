@@ -29,6 +29,7 @@ function onSelectChange() {
     if (!country || !category) return console.log('Choose the category and country')
 
     loaderUI.setLoader()
+    return
     newsService.getNewsByCountryAndCatigory(({
         articles
     }) => {
