@@ -47,7 +47,8 @@ function onSearchInputChange() {
         loaderUI.removeLoader()
         newsUI.addNewsToView(articles)
         console.log(articles) 
-        if (articles.length === 0){return notificationUI.setNotification()} 
+        if (articles.length === 0){notificationUI.setNotification()} 
+        return
     }, search)
    
 }
