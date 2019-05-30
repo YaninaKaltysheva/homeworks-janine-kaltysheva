@@ -32,11 +32,13 @@ class VideoPlayerBasic {
         this.progressContainer = this.container.querySelector('.progress')
         this.playerSlider = this.container.querySelector('.player__slider')
         this.playerSliderSpeed = this.container.querySelector('.player__slider__speed')
-        this.playerSkip = this.container.querySelector('.player__button')
+        this.playerSkip = this.container.querySelectorAll('.player__button')
     }
 
     setEvents() {
+      
         this.video.addEventListener('click', this.toggleVideo)
+        this.video.addEventListener('dblclick', (e) => this.SetVideoDbClick(e))
         this.toggleBtn.addEventListener('click', this.toggleVideo)
         this.progressContainer.addEventListener('click', (e) => this.scrub(e))
         this.progressContainer.addEventListener('mousedown', () => this.isMouseDown = true)
@@ -47,15 +49,20 @@ class VideoPlayerBasic {
         this.video.addEventListener('timeupdate', this.handleProgress)
         this.playerSlider.addEventListener('change',this.SetValume)
         this.playerSliderSpeed.addEventListener('change',this.SetSpeed)
-        this.playerSkip.addEventListener('click',(e) => this.SetSkip(e))
-
+        this.playerSkip.forEach((item) => item.addEventListener('click',this.SetSkip))
+        
+        
+    }
+    SetVideoDbClick(e){
+        console.log(e)
+        const halfVideo = e.offsetX / this.video.offsetWidth
+        if(halfVideo < 0.5){this.video.currentTime -= 2} else {this.video.currentTime += 2}
         
     }
     SetSkip = (e) => {
-        if(this.playerSkip.dataset.skip = '1'){
-            this.video.currentTime = +e.value} else if (this.playerSkip.dataset.skip = '-1'){
-            this.video.currentTime =-e.value 
-            }
+        if(e.target.dataset.skip === '-1'){
+            this.video.currentTime -= 1} else if (e.target.dataset.skip === '1'){
+            this.video.currentTime += 1}
     }      
     SetValume = (event) => {
         this.video.volume = event.target.value*0.01
