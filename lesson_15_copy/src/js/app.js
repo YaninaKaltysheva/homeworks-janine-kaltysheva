@@ -29,7 +29,7 @@ const newsService = new NewsService();
 const newsUI = new NewsUI();
 const loaderUI = new LoaderUI();
 const notificationUI = new NotificationUI();
-const debounsMethod = _.debounce(onSearchInput, 500)
+const debounsMethod = debounce(onSearchInput, 500)
 
 
 // Handlers for events -- пишем функции-обработчики, которые нужны для addEventListener
