@@ -76,13 +76,13 @@ class LiveHome extends Build {
     constructor(floors, flats) {
         super(floors);
         this.flats = flats;
-}
-getFloors(){
-    return {
-        floors: this.floors,
-        allflats: super.getFloors() * this.flats
     }
-}
+    getFloors(){
+        return {
+            floors: this.floors,
+            allflats: super.getFloors() * this.flats
+                }
+                }
 }
 class TradeHome extends Build {
     constructor(floors, shops) {
