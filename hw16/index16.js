@@ -23,7 +23,6 @@ function PlanetWithSatellite (name, satelliteName) {
     //Planet.call(this, name);
     this.roditel = {}; Planet.call(this.roditel, name)
     this.roditel.getName.call(this.roditel)
-
     this.satelliteName = satelliteName;
 }
 PlanetWithSatellite.prototype = Object.create(Planet.prototype);
@@ -74,9 +73,9 @@ class Build {
     getFloors(){return this.floors}
 }
 class LiveHome extends Build {
-constructor(floors, flats) {
-    super(floors);
-    this.flats = flats;
+    constructor(floors, flats) {
+        super(floors);
+        this.flats = flats;
 }
 getFloors(){
     return {
@@ -101,7 +100,6 @@ const livehome = new LiveHome (5, 2)
 const tradehome = new TradeHome (3, 4)
 console.log(livehome.getFloors())
 console.log(tradehome.getFloors())
-
 // 3. Создать класс “Мебель” с базовыми свойствами “имя”, “цена” и методом “получить информацию”
 // (метод должен вывести имя и цену). Метод должен быть объявлен с помощью прототипов
 // (Func.prototype...). Создать два экземпляра класса “Мебель”: экземпляр “ОфиснаяМебель” и
@@ -124,9 +122,6 @@ OfficeFurniture.prototype = Object.create(Furniture.prototype);
 OfficeFurniture.prototype.constructor = OfficeFurniture;
 OfficeFurniture.prototype.getInfo = function () {
     return Furniture.prototype.getInfo.call(this) + ' ' + this.unit
-}
-Furniture.prototype.getInfo = function () {
-    return this.name + ' ' + this.price
 }
 function HomeFurniture (name, price, item) {
     Furniture.call (this, name, price);
